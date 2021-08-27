@@ -1,0 +1,25 @@
+{
+  "name": "custom-elements-es5-adapter",
+  "version": "1.0.0",
+  "description": "es2015",
+  "main": "custom-elements-es5-adapter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taoqf/custom-elements-es5-adapter.git"
+  },
+  "keywords": [
+    "custom-elements-es5-adapter",
+    "webcomponents",
+    "polyfill",
+    "shim"
+  ],
+  "author": "taoqf <tao_qiufeng@126.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taoqf/custom-elements-es5-adapter/issues"
+  },
+  "homepage": "https://github.com/taoqf/custom-elements-es5-adapter#readme"
+}
