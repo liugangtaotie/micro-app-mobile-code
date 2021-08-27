@@ -1,7 +1,0 @@
-node_modules
-/lib
-/examples
-/polyfill
-/docs
-/plugins
-/src/__tests__/demo
