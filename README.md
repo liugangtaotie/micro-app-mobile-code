@@ -1,6 +1,6 @@
 # micro-app-example
 
-micro-app 实战 demo，父应用 vue(vite)，子应用用 react(webpack) 和 vue(webpack)
+micro-app 实战 demo，父应用 vue(vite)，子应用用 react(vite) 和 vue(vite)
 
 ## 一、项目特色
 ### 1. 开发环境，秒级更新，vite2成功构建vue2；
