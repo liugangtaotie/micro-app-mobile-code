@@ -66,22 +66,8 @@
     "plugins",
     "typings"
   ],
-  "author": "cangdu",
+  "author": "wuxiang",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/micro-zoe/micro-app/issues"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "lint-staged": {
-    "**/*.{js,ts}": [
-      "yarn lint"
-    ]
-  },
   "dependencies": {},
   "peerDependencies": {
     "@babel/runtime": ">=7.0.0"
