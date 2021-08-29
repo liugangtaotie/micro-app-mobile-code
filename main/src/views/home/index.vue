@@ -11,7 +11,7 @@
       <van-swipe-item>4</van-swipe-item>
     </van-swipe>
     <van-divider />
-    <van-button class="flex mt10" type="primary" @click="$router.push('/sub-first')"
+    <van-button class="flex mt10" type="primary" @click="$router.push('/vite')"
       >home,点击跳转about</van-button
     >
     <div class="flex flex_center single">

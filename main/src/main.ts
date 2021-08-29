@@ -172,7 +172,7 @@ microApp.start({
     modules: {
       vite: [{
         loader(code: string) {
-          if (process.env.NODE_ENV === 'development') {
+          if (import.meta.env.MODE === 'development') {
             code = code.replace(/(from|import)(\s*['"])(\/micro-app\/vite\/)/g, (all) => {
               return all.replace('/micro-app/vite/', 'http://localhost:7001/micro-app/vite/')
             })
@@ -182,30 +182,6 @@ microApp.start({
       }]
     }
   },
-  /**
-   * 自定义fetch
-   * @param url 静态资源地址
-   * @param options fetch请求配置项
-   * @returns Promise<string>
-   */
-  // fetch(url: string, options: any, appName: string) {
-  //   if (url === 'http://localhost:3001/error.js') {
-  //     return Promise.resolve('')
-  //   }
-
-  //   let config = null
-  //   if (url === 'http://localhost:3001/micro-app/react16/') {
-  //     config = {
-  //       headers: {
-  //         'custom-head': 'custom-head',
-  //       }
-  //     }
-  //   }
-
-  //   return fetch(url, Object.assign(options, config)).then((res) => {
-  //     return res.text()
-  //   })
-  // }
 })
 
 /**

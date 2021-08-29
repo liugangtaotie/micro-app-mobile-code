@@ -8,7 +8,7 @@ import _homeRouter from "./_homeRouter"; // 主页模块
 Vue.use(Router);
 
 export default new Router({
-  // mode:'history',
+  mode: "history",
   routes: [
     ..._homeRouter,
     /**

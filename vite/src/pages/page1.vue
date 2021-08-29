@@ -7,10 +7,10 @@
 </template>
 
 <script setup>
-import HelloWorld from '../components/HelloWorld.vue'
-import { defineProps, reactive } from 'vue'
+import HelloWorld from "../components/HelloWorld.vue";
+import { defineProps, reactive } from "vue";
 
-const url = reactive(new URL('../assets/logo.png', import.meta.url))
+const url = reactive(new URL("../assets/logo.png", import.meta.url));
 // This starter template is using Vue 3 experimental <script setup> SFCs
 // Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
 </script>
