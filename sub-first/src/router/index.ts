@@ -12,6 +12,7 @@ export default new Router({
     // 👇👇 添加路由前缀，子应用可以通过window.__MICRO_APP_BASE_URL__获取基座下发的baseurl
     base: window.__MICRO_APP_BASE_URL__ || '/',
   },
+  history:'/micro-app/sub-first/',
   routes: [
     ..._homeRouter,
     /**

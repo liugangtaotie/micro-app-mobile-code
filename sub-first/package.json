@@ -5,6 +5,7 @@
   "author": "lgcf1314@gmail.com",
   "private": true,
   "scripts": {
+    "start": "vite",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
