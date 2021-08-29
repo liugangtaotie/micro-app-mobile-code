@@ -11,7 +11,7 @@
       <van-swipe-item>4</van-swipe-item>
     </van-swipe>
     <van-divider />
-    <van-button class="flex mt10" type="primary" @click="$router.push('/about')"
+    <van-button class="flex mt10" type="primary" @click="$router.push('/sub-first')"
       >home,点击跳转about</van-button
     >
     <div class="flex flex_center single">
@@ -33,6 +33,7 @@ import { Component, Vue } from "vue-property-decorator";
   name: "Home",
 })
 export default class Home extends Vue {
+  [x: string]: any;
   private signToShow: Boolean = false; //
   private num: number = 0;
   private active: number = 0;

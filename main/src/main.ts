@@ -7,6 +7,7 @@ import store from "./store";
 import "./assets/css/reset.css";
 import "./assets/css/style.css";
 import "./assets/css/flex.css";
+import microApp from '@micro-zoe/micro-app'
 
 // Add lazyload directive
 import VueLazyload from "vue-lazyload";
@@ -149,10 +150,13 @@ Vue.use(VueLazyload, {
   loading: loadingImg
 });
 
+microApp.start()
+
+
 /**
  * 导航钩子
  */
-router.beforeEach((to, from, next) => {
+router.beforeEach((to:any, from, next) => {
   document.title = to.meta.title || "vite2+vue2+ts";
   return next();
 });
