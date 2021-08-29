@@ -17,7 +17,7 @@ const __APP_INFO__ = {
 
 export default defineConfig({
   clearScreen: false,
-  base: `${process.env.NODE_ENV === 'production' ? 'https://zeroing.jd.com' : ''}/micro-app/vite/`,
+  base: `${process.env.NODE_ENV === 'production' ? 'https://zeroing.jd.com' : ''}/micro-app/sub-first/`,
 
   define: {
     // setting vue-i18-next

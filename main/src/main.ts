@@ -179,6 +179,16 @@ microApp.start({
           }
           return code
         }
+      }],
+      'sub-first': [{
+        loader(code: string) {
+          if (import.meta.env.MODE === 'development') {
+            code = code.replace(/(from|import)(\s*['"])(\/micro-app\/sub-first\/)/g, (all) => {
+              return all.replace('/micro-app/sub-first/', 'http://localhost:8081/micro-app/sub-first/')
+            })
+          }
+          return code
+        }
       }]
     }
   },

@@ -12,7 +12,11 @@
     </van-swipe>
     <van-divider />
     <van-button class="flex mt10" type="primary" @click="$router.push('/vite')"
-      >home,点击跳转about</van-button
+      >home,点击跳转vite</van-button
+    >
+    <van-divider />
+    <van-button class="flex mt10" type="primary" @click="$router.push('/sub-first')"
+      >home,点击跳转sub-first</van-button
     >
     <div class="flex flex_center single">
       store的count数据 <span class="ml20 f30 t2">{{ $store.state.moduleMain.count }}</span>
