@@ -1,15 +1,9 @@
 <template>
   <div class="home-model tcenter">
-    <van-notice-bar
-      text="Technology is the common soul of the people who developed it."
-      left-icon="volume-o"
-    />
-    <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-      <van-swipe-item>1</van-swipe-item>
-      <van-swipe-item>2</van-swipe-item>
-      <van-swipe-item>3</van-swipe-item>
-      <van-swipe-item>4</van-swipe-item>
-    </van-swipe>
+    <van-divider />
+    <van-button class="flex mt10" type="primary" @click="gotoMainHome"
+      >子应用，跳转基座主页</van-button
+    >
     <van-divider />
     <van-button class="flex mt10" type="primary" @click="$router.push('/about')"
       >home,点击跳转about</van-button
@@ -33,12 +27,18 @@ import { Component, Vue } from "vue-property-decorator";
   name: "Home",
 })
 export default class Home extends Vue {
+  [x: string]: any;
   private signToShow: Boolean = false; //
   private num: number = 0;
   private active: number = 0;
   private activeTab: number = 0;
 
   created() {}
+
+  // 跳转sub-first
+  gotoMainHome() {
+    history.pushState(null, "/main-home", "/main-home");
+  }
 
   mounted() {
     this.num = this.$store.state.moduleMain.count;
