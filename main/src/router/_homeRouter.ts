@@ -2,11 +2,11 @@ export default [
   // router redirect
   {
     path: "/",
-    redirect: "/mian-home",
+    redirect: "/main-home",
   },
   // home
   {
-    path: "/mian-home",
+    path: "/main-home",
     meta: {
       requiresAuth: true,
       keepAlive: false,

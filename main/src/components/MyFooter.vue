@@ -16,6 +16,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
   name: "MyFooter",
 })
 export default class MyFooter extends Vue {
+  [x: string]: any;
   @Prop({ type: Number, default: 0 }) active;
   private activeIndex = 0;
 
@@ -27,7 +28,7 @@ export default class MyFooter extends Vue {
     const activeIndex = this.activeIndex;
     switch (activeIndex) {
       case 0:
-        return this.$router.push("/home");
+        return this.$router.push("/main-home");
       case 1:
         return this.$router.push("/tabTwo");
       case 2:
