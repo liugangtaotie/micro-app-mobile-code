@@ -22,4 +22,4 @@ export default new Router({
       component: () => import("@VIE/404.vue"),
     },
   ],
-});
+} as any);

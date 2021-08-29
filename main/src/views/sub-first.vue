@@ -3,6 +3,7 @@
     <micro-app
       name="sub-first"
       url="http://localhost:8081/micro-app/sub-first/"
+      baseurl="/"
       inline
       disableSandbox
     >
