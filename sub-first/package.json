@@ -1,7 +1,7 @@
 {
-  "name": "vite2-vue2-vant2-ts",
+  "name": "sub-first",
   "version": "1.0.0",
-  "description": "vite2-vue2-ts",
+  "description": "main",
   "author": "lgcf1314@gmail.com",
   "private": true,
   "scripts": {
