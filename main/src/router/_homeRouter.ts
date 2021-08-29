@@ -20,6 +20,11 @@ export default [
     name: "sub-first",
     component: () => import(/* webpackChunkName: "sub-first" */ "@VIE/sub-first.vue"),
   },
+  {
+    path: "/vite/:page*",
+    name: "vite",
+    component: () => import(/* webpackChunkName: "vite" */ "@VIE/vite.vue"),
+  },
   // about
   {
     path: "/about",

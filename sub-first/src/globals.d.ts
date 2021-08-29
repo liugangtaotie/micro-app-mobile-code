@@ -5,6 +5,7 @@ declare var $: any;
 declare module "BMap";
 
 interface Window {
+  __MICRO_APP_BASE_URL__:any,
   __hideLoading__:any;
   WeixinJSBridge: any;
   $$instance: any;

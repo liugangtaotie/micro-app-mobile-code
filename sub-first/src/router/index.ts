@@ -8,7 +8,10 @@ import _homeRouter from "./_homeRouter"; // 主页模块
 Vue.use(Router);
 
 export default new Router({
-  // mode:'history',
+  options: {
+    // 👇👇 添加路由前缀，子应用可以通过window.__MICRO_APP_BASE_URL__获取基座下发的baseurl
+    base: window.__MICRO_APP_BASE_URL__ || '/',
+  },
   routes: [
     ..._homeRouter,
     /**
@@ -22,4 +25,4 @@ export default new Router({
       component: () => import("@VIE/404.vue"),
     },
   ],
-});
+} as any);

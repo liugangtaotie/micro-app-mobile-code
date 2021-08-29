@@ -158,6 +158,10 @@ export default defineConfig({
       },
     },
 
+    fs: {
+      strict: false,
+    },
+
     hmr: {
       overlay: true,
     },

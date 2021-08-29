@@ -16,9 +16,8 @@ const __APP_INFO__ = {
 };
 
 export default defineConfig({
-  // base: "./",
-
-  base: `${process.env.NODE_ENV === "production" ? "http://my-site.com" : ""}/basename/`,
+  clearScreen: false,
+  base: `${process.env.NODE_ENV === 'production' ? 'https://zeroing.jd.com' : ''}/micro-app/vite/`,
 
   define: {
     // setting vue-i18-next
@@ -84,24 +83,22 @@ export default defineConfig({
 
     // 自定义插件
     (function () {
-      let baseUrl = "";
+      let baseUrl = ''
       return {
         name: "vite:micro-app",
-        apply: "build", // 只在生产环境生效
+        apply: 'build',
         configResolved(config) {
-          // 获取资源地址前缀
-          baseUrl = `${config.base}${config.build.assetsDir}/`;
+          baseUrl = `${config.base}${config.build.assetsDir}/`
         },
         renderChunk(code, chunk) {
-          // build后，import会通过相对地址引入模块，需要将其补全
-          if (chunk.fileName.endsWith(".js") && /(from|import)(\s*['"])(\.\.?\/)/g.test(code)) {
+          if (chunk.fileName.endsWith('.js') && /(from|import)(\s*['"])(\.\.?\/)/g.test(code)) {
             code = code.replace(/(from|import)(\s*['"])(\.\.?\/)/g, (all, $1, $2, $3) => {
-              return all.replace($3, new URL($3, baseUrl));
-            });
+              return all.replace($3, new URL($3, baseUrl))
+            })
           }
-          return code;
-        },
-      };
+          return code
+        }
+      }
     } as any)(),
   ],
 
