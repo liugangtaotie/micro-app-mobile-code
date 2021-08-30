@@ -7,7 +7,6 @@ import store from "./store";
 import "./assets/css/reset.css";
 import "./assets/css/style.css";
 import "./assets/css/flex.css";
-import microApp from '@micro-zoe/micro-app'
 
 // Add lazyload directive
 import VueLazyload from "vue-lazyload";
@@ -46,8 +45,6 @@ import {
   RadioGroup, Radio,
   Checkbox,
   CheckboxGroup,
-  Grid,
-  GridItem,
   Toast,
   Tab,
   Tabs,
@@ -101,8 +98,6 @@ Vue.use(Radio);
 Vue.use(RadioGroup);
 Vue.use(Checkbox);
 Vue.use(CheckboxGroup);
-Vue.use(Grid);
-Vue.use(GridItem);
 Vue.use(Toast);
 Vue.use(Tab);
 Vue.use(Tabs);
@@ -153,51 +148,6 @@ Vue.use(VueLazyload, {
   error: errorImg,
   loading: loadingImg
 });
-
-// 微前端，基座与子应用开启
-microApp.start({
-  lifeCycles: {
-    created() {
-      console.log('created 全局监听')
-    },
-    beforemount() {
-      console.log('beforemount 全局监听')
-    },
-    mounted() {
-      console.log('mounted 全局监听')
-    },
-    unmount() {
-      console.log('unmount 全局监听')
-    },
-    error() {
-      console.log('error 全局监听')
-    }
-  },
-  plugins: {
-    modules: {
-      'sub-first': [{
-        loader(code: string) {
-          if (import.meta.env.MODE === 'development') {
-            code = code.replace(/(from|import)(\s*['"])(\/micro-app\/sub-first\/)/g, (all) => {
-              return all.replace('/micro-app/sub-first/', 'http://localhost:8081/micro-app/sub-first/')
-            })
-          }
-          return code
-        }
-      }],
-      'sub-second': [{
-        loader(code: string) {
-          if (import.meta.env.MODE === 'development') {
-            code = code.replace(/(from|import)(\s*['"])(\/micro-app\/sub-second\/)/g, (all) => {
-              return all.replace('/micro-app/sub-second/', 'http://localhost:8082/micro-app/sub-second/')
-            })
-          }
-          return code
-        }
-      }]
-    }
-  },
-})
 
 /**
  * 导航钩子

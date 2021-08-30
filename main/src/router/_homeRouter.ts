@@ -14,11 +14,17 @@ export default [
     },
     component: () => import("@VIE/home/index.vue"),
   },
+  // sub-first
   {
-    // 👇👇 非严格匹配，/sub-first/* 都将匹配到 SubFirst组件
     path: "/sub-first",
     name: "sub-first",
     component: () => import(/* webpackChunkName: "sub-first" */ "@VIE/sub-first.vue"),
+  },
+  // sub-second
+  {
+    path: "/sub-second",
+    name: "sub-second",
+    component: () => import(/* webpackChunkName: "sub-second" */ "@VIE/sub-second.vue"),
   },
   // about
   {
