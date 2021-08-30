@@ -58,6 +58,9 @@ export default class Home extends Vue {
   }
 
   mounted() {
+    window.microApp?.setGlobalData({ type: "全局数据", count: 1000 });
+    // const data = (window as any).microApp?.getData(); // 返回data数据
+    // console.info("22222", data);
     this.num = this.$store.state.moduleMain.count;
   }
 

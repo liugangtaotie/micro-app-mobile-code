@@ -23,7 +23,7 @@
     </van-grid>
 
     <div class="flex flex_center single">
-      store的count数据 <span class="ml20 f30 t2">{{ $store.state.moduleMain.count }}</span>
+      global的count数据 <span class="ml20 f30 t2">{{ num }}</span>
     </div>
     <van-button class="flex mt10" type="primary" @click="onClickAdd">add +</van-button>
     <van-button style="margin-left: 10px" class="flex mt10" type="primary" @click="onClickSub"
@@ -36,6 +36,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import microApp from "@micro-zoe/micro-app";
 
 @Component({
   name: "Home",
@@ -43,22 +44,28 @@ import { Component, Vue } from "vue-property-decorator";
 export default class Home extends Vue {
   [x: string]: any;
   private signToShow: Boolean = false; //
-  private num: number = 0;
+  private num: number = 100;
   private active: number = 0;
   private activeTab: number = 0;
 
   created() {}
 
   mounted() {
-    this.num = this.$store.state.moduleMain.count;
+    const count = this.num;
+    microApp.setGlobalData({ type: "全局数据", count });
+    // this.num = this.$store.state.moduleMain.count;
   }
 
   onClickAdd() {
-    this.$store.commit("moduleMain/increment");
+    const count = ++this.num;
+    microApp.setGlobalData({ type: "全局数据", count });
+    // this.$store.commit("moduleMain/increment");
   }
 
   onClickSub() {
-    this.$store.commit("moduleMain/subtraction");
+    const count = --this.num;
+    microApp.setGlobalData({ type: "全局数据", count });
+    // this.$store.commit("moduleMain/subtraction");
   }
 }
 </script>

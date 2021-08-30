@@ -199,6 +199,25 @@ microApp.start({
   },
 })
 
+function dataListener (data) {
+  console.log('全局数据', data)
+}
+
+/**
+ * 绑定监听函数
+ * dataListener: 绑定函数
+ * autoTrigger: 在初次绑定监听函数时有缓存数据，是否需要主动触发一次，默认为false
+ */
+microApp.addGlobalDataListener(dataListener)
+
+// 解除绑定
+// microApp.removeGlobalDataListener(dataListener)
+
+// // 清空所有全局数据的绑定函数
+// microApp.clearGlobalDataListener()
+
+
+
 /**
  * 导航钩子
  */
