@@ -2,11 +2,11 @@
   <div class="home-model tcenter">
     <van-divider />
     <van-button class="flex mt10" type="primary" @click="gotoMainHome"
-      >子应用，跳转基座主页</van-button
+      >子应用sub，跳转基座主页</van-button
     >
     <van-divider />
     <van-button class="flex mt10" type="primary" @click="$router.push('/about')"
-      >home,点击跳转about</van-button
+      >子应用home,点击跳转about</van-button
     >
     <div class="flex flex_center single">
       store的count数据 <span class="ml20 f30 t2">{{ $store.state.moduleMain.count }}</span>
@@ -38,9 +38,11 @@ export default class Home extends Vue {
   // 跳转sub-first
   gotoMainHome() {
     history.pushState(null, null, "/main-home");
+    // history.push('/')
+    // history.pushState(null, null, "/main-home");
 
     // 主动触发一次popstate事件
-    window.dispatchEvent(new PopStateEvent("popstate", { state: null }));
+    // window.dispatchEvent(new PopStateEvent("popstate", { state: null }));
   }
 
   mounted() {

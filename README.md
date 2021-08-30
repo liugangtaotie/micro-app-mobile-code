@@ -26,3 +26,7 @@ npm start
 - [-] 整体架构
 - [✔] 主页面整体交互
 - [✔] 全局数据流共享
+
+## 推荐的官方文档
+
+[micro-app 官网](https://zeroing.jd.com/micro-app/docs.html#/zh-cn/start)
