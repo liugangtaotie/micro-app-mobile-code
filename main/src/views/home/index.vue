@@ -11,9 +11,17 @@
       <van-swipe-item>4</van-swipe-item>
     </van-swipe>
     <van-divider />
-    <van-button class="flex mt10" type="primary" @click="$router.push('/sub-first')"
-      >home,点击跳转子应用sub-first</van-button
-    >
+
+    <van-grid class="flex flex_around" :gutter="10" :column-num="3">
+      <van-grid-item icon="photo-o" text="sub-first" @click="$router.push('/sub-first')" />
+      <van-grid-item icon="photo-o" text="sub-react" @click="$router.push('/sub-first')" />
+      <van-grid-item icon="photo-o" text="文字" />
+    </van-grid>
+
+    <van-grid class="mt10" :gutter="10">
+      <van-grid-item v-for="value in 4" :key="value" icon="photo-o" text="Text" />
+    </van-grid>
+
     <div class="flex flex_center single">
       store的count数据 <span class="ml20 f30 t2">{{ $store.state.moduleMain.count }}</span>
     </div>

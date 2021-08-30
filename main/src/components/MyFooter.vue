@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-tabbar v-model="activeIndex" @change="onChangeTabbar">
+    <van-tabbar class="tabbar-top" v-model="activeIndex" @change="onChangeTabbar">
       <van-tabbar-item icon="home-o">home</van-tabbar-item>
       <van-tabbar-item icon="search" dot>two</van-tabbar-item>
       <van-tabbar-item icon="friends-o" badge="5">three</van-tabbar-item>
@@ -43,6 +43,9 @@ export default class MyFooter extends Vue {
 </script>
 
 <style lang='less' scoped>
+.tabbar-top {
+  border-top: 1px solid #fff;
+}
 </style>
 
 
