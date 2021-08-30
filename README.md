@@ -1,5 +1,7 @@
 # micro-app-example
+
 基于micro-app（JD），移动端（mobile）微前端解决方案
+
 micro-app 实战 demo，父应用 vue(vite)，子应用用 react(vite) 和 vue(vite)
 
 ## 🎁 一、项目特色
