@@ -2,7 +2,7 @@
   <div class="home-model tcenter">
     <van-divider />
     <van-button class="flex mt10" type="primary" @click="gotoMainHome"
-      >子应用sub，跳转基座主页</van-button
+      >子应用sub-second，跳转基座主页</van-button
     >
     <van-divider />
     <van-button class="flex mt10" type="primary" @click="$router.push('/about')"

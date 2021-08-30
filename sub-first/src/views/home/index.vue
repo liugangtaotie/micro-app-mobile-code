@@ -1,8 +1,13 @@
 <template>
   <div class="home-model tcenter">
+    <van-grid class="flex flex_around" :gutter="10" :column-num="3">
+      <van-grid-item icon="photo-o" text="sub-second" @click="gotoSubSecond" />
+      <van-grid-item icon="photo-o" text="文字" />
+      <van-grid-item icon="photo-o" text="文字" />
+    </van-grid>
     <van-divider />
     <van-button class="flex mt10" type="primary" @click="gotoMainHome"
-      >子应用sub，跳转基座主页</van-button
+      >子应用sub-first，跳转基座主页</van-button
     >
     <van-divider />
     <van-button class="flex mt10" type="primary" @click="$router.push('/about')"
@@ -43,6 +48,13 @@ export default class Home extends Vue {
 
     // 主动触发一次popstate事件
     // window.dispatchEvent(new PopStateEvent("popstate", { state: null }));
+  }
+
+  // 跳转 sub-second
+  gotoSubSecond() {
+    history.pushState(null, null, "/sub-second");
+    // 主动触发一次popstate事件
+    window.dispatchEvent(new PopStateEvent("popstate", { state: null }));
   }
 
   mounted() {
