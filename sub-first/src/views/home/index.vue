@@ -45,12 +45,9 @@ export default class Home extends Vue {
     history.pushState(null, null, "main-home");
 
     console.info("1111111", window);
-    setTimeout(() => {
-      window.dispatchEvent(new PopStateEvent("popstate", { state: null }));
-    }, 10);
 
     // 主动触发一次popstate事件
-    // window.dispatchEvent(new PopStateEvent("popstate", { state: null }));
+    window.dispatchEvent(new PopStateEvent("popstate", { state: null }));
   }
 
   // 跳转 sub-second
