@@ -10,7 +10,7 @@ export default [
     meta: {
       requiresAuth: true,
       keepAlive: false,
-      title: "home",
+      title: "main-home",
     },
     component: () => import("@VIE/home/index.vue"),
   },

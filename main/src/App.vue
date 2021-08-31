@@ -7,17 +7,15 @@
     <router-view v-if="!$route.meta.keepAlive"></router-view>
 
     <!-- loading -->
-    <BsLoading />
+    <bs-loading />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import BsLoading from "@COM/BsLoading.vue";
 
 @Component({
   name: "App",
-  components: { BsLoading },
 })
 export default class App extends Vue {
   // mixins: [eventMixin],

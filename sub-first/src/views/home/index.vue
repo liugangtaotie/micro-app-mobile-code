@@ -11,7 +11,7 @@
     >
     <van-divider />
     <van-button class="flex mt10" type="primary" @click="$router.push('/about')"
-      >子应用home,点击跳转about</van-button
+      >子应用sub-first,点击跳转about</van-button
     >
     <div class="flex flex_center single">
       store的count数据 <span class="ml20 f30 t2">{{ $store.state.moduleMain.count }}</span>
@@ -42,9 +42,12 @@ export default class Home extends Vue {
 
   // 跳转sub-first
   gotoMainHome() {
-    history.pushState(null, null, "/main-home");
-    // history.push('/')
-    // history.pushState(null, null, "/main-home");
+    history.pushState(null, null, "main-home");
+
+    console.info("1111111", window);
+    setTimeout(() => {
+      window.dispatchEvent(new PopStateEvent("popstate", { state: null }));
+    }, 10);
 
     // 主动触发一次popstate事件
     // window.dispatchEvent(new PopStateEvent("popstate", { state: null }));
@@ -52,13 +55,13 @@ export default class Home extends Vue {
 
   // 跳转 sub-second
   gotoSubSecond() {
-    history.pushState(null, null, "/sub-second");
+    history.pushState(null, null, "sub-second");
     // 主动触发一次popstate事件
     window.dispatchEvent(new PopStateEvent("popstate", { state: null }));
   }
 
   mounted() {
-    window.microApp?.setGlobalData({ type: "全局数据", count: 1000 });
+    // window.microApp?.setGlobalData({ type: "全局数据", count: 1000 });
     // const data = (window as any).microApp?.getData(); // 返回data数据
     // console.info("22222", data);
     this.num = this.$store.state.moduleMain.count;

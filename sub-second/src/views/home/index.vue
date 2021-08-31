@@ -6,7 +6,7 @@
     >
     <van-divider />
     <van-button class="flex mt10" type="primary" @click="$router.push('/about')"
-      >子应用home,点击跳转about</van-button
+      >子应用sub-second,点击跳转about</van-button
     >
     <div class="flex flex_center single">
       store的count数据 <span class="ml20 f30 t2">{{ $store.state.moduleMain.count }}</span>
@@ -37,7 +37,7 @@ export default class Home extends Vue {
 
   // 跳转sub-first
   gotoMainHome() {
-    history.pushState(null, null, "/main-home");
+    history.pushState(null, null, "main-home");
     // history.push('/')
     // history.pushState(null, null, "/main-home");
 
