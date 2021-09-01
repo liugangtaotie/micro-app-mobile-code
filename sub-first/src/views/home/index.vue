@@ -3,7 +3,7 @@
     <van-grid class="flex flex_around" :gutter="10" :column-num="3">
       <van-grid-item icon="photo-o" text="sub-second" @click="gotoSubSecond" />
       <van-grid-item icon="photo-o" text="文字first" />
-      <van-grid-item icon="photo-o" text="文字" />
+      <van-grid-item icon="photo-o" text="文字first" />
     </van-grid>
     <van-divider />
     <van-button class="flex mt10" type="primary" @click="gotoMainHome"
@@ -57,6 +57,10 @@ export default class Home extends Vue {
     history.pushState(null, null, "sub-second");
     // 主动触发一次popstate事件
     window.dispatchEvent(new PopStateEvent("popstate", { state: null }));
+
+    setTimeout(() => {
+      location.reload();
+    }, 100);
   }
 
   mounted() {

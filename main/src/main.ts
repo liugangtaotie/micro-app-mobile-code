@@ -154,7 +154,7 @@ Vue.use(VueLazyload, {
   loading: loadingImg
 });
 
-// 微前端，基座与子应用开启
+// 微前端，基座与子应用注册与开启
 microApp.start({
   lifeCycles: {
     created() {
@@ -216,66 +216,13 @@ microApp.addGlobalDataListener(dataListener)
 // // 清空所有全局数据的绑定函数
 // microApp.clearGlobalDataListener()
 
-/**
- * 发布 － 订阅模式
- */
-//定义一个新闻发布平台
-//主要功能包括任务发布大厅(informationWarehouse)，以及订阅任务(subscribe)，发布任务(release)
-let task = {
-  informationWarehouse: {},
-  subscribe(key, fn) {
-      if (typeof this.informationWarehouse[key] === "undefined") {
-          this.informationWarehouse[key] = []
-      }
-      this.informationWarehouse[key].push(fn) // 订阅的消息推送到调度中心
-  },
-  release(type, news) {
-      let fns = this.informationWarehouse[type]
-      // 如果调度中心没有这个资源，返回结束
-      if (typeof fns === "undefined" || fns.length === 0) return;
-      fns.forEach(fn => {
-          fn(news);
-      })
-  }
-}
-console.log("----- 订阅 -----");
-// 订阅 娱乐头条
-task.subscribe('娱乐', val => {
-  console.log('小王订阅的娱乐头条', JSON.stringify(val))
-})
-// 订阅 科技头条
-task.subscribe('科技', val => {
-  console.log('小刘订阅的科技头条', JSON.stringify(val))
-})
-// 订阅 历史头条
-task.subscribe('历史', val => {
-  console.log('小李订阅的历史头条', JSON.stringify(val))
-})
-/**
-* 系统推送头条
-*/
-console.log("----- 发布 -----");
-task.release('娱乐', {
-  title: "大衣哥给儿媳妇红包的言外之意",
-  url: "https://www.toutiao.com/a6966769740203262478"
-})
-task.release('科技', {
-  title: "192号段发放在即 中国广电5G渐近",
-  url: "https://www.toutiao.com/a6966480940277334535"
-})
-task.release('历史', {
-  title: "袁隆平的父母何许人也？",
-  url: "https://www.toutiao.com/a6966099280075424267"
-})
-console.log("调度中心", task.informationWarehouse);
+
 
 /**
  * 导航钩子
  */
 router.beforeEach((to:any, from, next) => {
   document.title = to.meta.title || "micro-app";
-  console.info('222222',to);
-  console.info('2222',from);
   return next();
 });
 
