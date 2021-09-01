@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "lint-staged": "^10.5.1",
     "npm-run-all": "^4.1.5"
   },
   "scripts": {
@@ -20,7 +21,15 @@
     "build:sub-home": "cd sub-home && npm run build",
     "build:sub-first": "cd sub-first && npm run build",
     "build:main": "cd main && npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "autofix": "npm-run-all --parallel autofix:*",
+    "autofix:main": "cd main && eslint --fix --ext .js,.vue,.ts src",
+    "autofix:sub-first": "cd sub-first && eslint --fix --ext .js,.vue,.ts src",
+    "autofix:sub-second": "cd sub-second && eslint --fix --ext .js,.vue,.ts src",
+    "stylelint": "npm-run-all --parallel stylelint:*",
+    "stylelint:main": "cd main && stylelint src/**/**/*.{html,vue,css,sass,scss} --fix",
+    "stylelint:sub-first": "cd sub-first && stylelint src/**/**/*.{html,vue,css,sass,scss} --fix",
+    "stylelint:sub-second": "cd sub-second && stylelint src/**/**/*.{html,vue,css,sass,scss} --fix"
   },
   "repository": {
     "type": "git",
