@@ -38,11 +38,13 @@ export default class Home extends Vue {
   // 跳转sub-first
   gotoMainHome() {
     history.pushState(null, null, "main-home");
-    // history.push('/')
-    // history.pushState(null, null, "/main-home");
 
     // 主动触发一次popstate事件
-    // window.dispatchEvent(new PopStateEvent("popstate", { state: null }));
+    window.dispatchEvent(new PopStateEvent("popstate", { state: null }));
+
+    setTimeout(() => {
+      location.reload();
+    }, 100);
   }
 
   mounted() {

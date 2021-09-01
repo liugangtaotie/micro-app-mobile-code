@@ -274,6 +274,8 @@ console.log("调度中心", task.informationWarehouse);
  */
 router.beforeEach((to:any, from, next) => {
   document.title = to.meta.title || "micro-app";
+  console.info('222222',to);
+  console.info('2222',from);
   return next();
 });
 
