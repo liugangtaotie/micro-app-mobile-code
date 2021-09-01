@@ -42,6 +42,17 @@
     "micro-app-example",
     "demo"
   ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "yarn autofix"
+    ],
+    "*.{html,vue,css,sass,scss}": [
+      "yarn stylelint"
+    ]
+  },
   "author": "wuxiang",
   "license": "MIT",
   "__npminstall_done": false
