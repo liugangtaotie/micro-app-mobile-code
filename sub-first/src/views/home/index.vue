@@ -14,7 +14,7 @@
       >子应用sub-first,点击跳转about</van-button
     >
     <div class="flex flex_center single">
-      store的count数据 <span class="ml20 f30 t2">{{ $store.state.moduleMain.count }}</span>
+      global的count数据 <span class="ml20 f30 t2">{{ num }}</span>
     </div>
     <van-button class="flex mt10" type="primary" @click="onClickAdd">add +</van-button>
     <van-button style="margin-left: 10px" class="flex mt10" type="primary" @click="onClickSub"
@@ -34,7 +34,7 @@ import { Component, Vue } from "vue-property-decorator";
 export default class Home extends Vue {
   [x: string]: any;
   private signToShow: Boolean = false; //
-  private num: number = 0;
+  private num: number = 100;
   private active: number = 0;
   private activeTab: number = 0;
 
@@ -64,18 +64,22 @@ export default class Home extends Vue {
   }
 
   mounted() {
-    // window.microApp?.setGlobalData({ type: "全局数据", count: 1000 });
-    // const data = (window as any).microApp?.getData(); // 返回data数据
-    // console.info("22222", data);
-    this.num = this.$store.state.moduleMain.count;
+    const count = this.num;
+    window.microApp?.setGlobalData({ type: "全局数据", count });
+    // this.num = this.$store.state.moduleMain.count;
   }
 
   onClickAdd() {
-    this.$store.commit("moduleMain/increment");
+    const count = ++this.num;
+    console.info("111111", count);
+    window.microApp?.setGlobalData({ type: "全局数据", count });
+    // this.$store.commit("moduleMain/increment");
   }
 
   onClickSub() {
-    this.$store.commit("moduleMain/subtraction");
+    const count = --this.num;
+    window.microApp?.setGlobalData({ type: "全局数据", count });
+    // this.$store.commit("moduleMain/subtraction");
   }
 }
 </script>

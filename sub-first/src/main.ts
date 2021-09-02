@@ -157,6 +157,8 @@ function dataListener (data) {
   console.log('来自基座应用的数据', data)
 }
 
+console.info('222222',window.microApp)
+
 /**
  * 绑定监听函数
  * dataListener: 绑定函数
