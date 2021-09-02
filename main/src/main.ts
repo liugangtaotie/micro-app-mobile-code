@@ -216,6 +216,7 @@ microApp.addGlobalDataListener(dataListener)
 // // 清空所有全局数据的绑定函数
 // microApp.clearGlobalDataListener()
 
+window.microApp = microApp;
 
 /**
  * 导航钩子
