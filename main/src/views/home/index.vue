@@ -15,7 +15,7 @@
     <van-grid class="flex flex_around" :gutter="10" :column-num="3">
       <van-grid-item icon="photo-o" text="sub-first" @click="$router.push('/sub-first')" />
       <van-grid-item icon="photo-o" text="sub-second" @click="$router.push('/sub-second')" />
-      <van-grid-item icon="photo-o" text="文字" />
+      <van-grid-item icon="photo-o" text="文字9311" />
     </van-grid>
 
     <van-grid class="mt10" :gutter="10">
