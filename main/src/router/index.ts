@@ -23,6 +23,12 @@ export default new Router({
     name: "sub-second",
     component: () => import(/* webpackChunkName: "sub-second" */ "@VIE/sub-second.vue"),
   },
+   // sub-third
+   {
+    path: "/sub-third",
+    name: "sub-third",
+    component: () => import(/* webpackChunkName: "sub-third" */ "@VIE/sub-third.vue"),
+  },
     /**
      * 404 Page
      */

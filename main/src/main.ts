@@ -194,6 +194,16 @@ microApp.start({
           }
           return code
         }
+      }],
+      'sub-third': [{
+        loader(code: string) {
+          if (import.meta.env.MODE === 'development') {
+            code = code.replace(/(from|import)(\s*['"])(\/micro-app\/sub-third\/)/g, (all) => {
+              return all.replace('/micro-app/sub-third/', 'http://localhost:8083/micro-app/sub-third/')
+            })
+          }
+          return code
+        }
       }]
     }
   },
